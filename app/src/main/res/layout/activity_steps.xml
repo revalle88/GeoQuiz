@@ -50,7 +50,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/tv_dist"
+        android:id="@+id/tv_cal"
         android:layout_width="80dp"
         android:layout_height="33dp"
         android:layout_marginLeft="27dp"
@@ -76,5 +76,5 @@
         android:layout_marginTop="64dp"
         android:text="speed"
         app:layout_constraintLeft_toRightOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dist" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_cal" />
 </android.support.constraint.ConstraintLayout>

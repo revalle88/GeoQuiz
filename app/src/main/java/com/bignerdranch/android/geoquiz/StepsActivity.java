@@ -5,7 +5,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,10 +25,10 @@ public class StepsActivity extends Activity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steps);
+        setContentView(R.layout.activity_steps_v2);
 
         tv_steps = (TextView) findViewById(R.id.tv_steps);
-        tv_dist = (TextView) findViewById(R.id.tv_dist);
+        tv_dist = (TextView) findViewById(R.id.tv_cal);
         tv_cal = (TextView) findViewById(R.id.tv_cal);
         SM = (SensorManager)getSystemService(SENSOR_SERVICE);
      //   mySensor = SM.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
