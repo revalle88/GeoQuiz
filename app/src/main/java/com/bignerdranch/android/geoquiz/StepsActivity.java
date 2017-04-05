@@ -65,8 +65,11 @@ public class StepsActivity extends Activity implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         if (running){
             tv_steps.setText(String.valueOf(event.values[0]));
-            tv_dist.setText(String.valueOf(event.values[0]*0.45*1.8) + " m");
-            tv_cal.setText(String.valueOf(event.values[0]*0.045) + " kcal");
+
+            tv_dist.setText(String.format("%.1f", event.values[0]*0.45*1.8) + " m");
+         //   tv_dist.setText(String.valueOf(event.values[0]*0.45*1.8) + " m");
+            tv_cal.setText(String.format("%.1f", event.values[0]*0.045) + " kcal");
+
         }
     }
 
