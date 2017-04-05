@@ -3,8 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.paranoid.android.menutest.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_height"
         android:orderInCategory="100"
-        android:title="dgfgdf"
+        android:title="Рост"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_weight"
+        android:orderInCategory="100"
+        android:title="Вес"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_week"
+        android:orderInCategory="100"
+        android:title="Неделя"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_month"
+        android:orderInCategory="100"
+        android:title="Месяц"
+        app:showAsAction="always" />
+
 </menu>
