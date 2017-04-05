@@ -39,6 +39,7 @@ public class StepsActivity extends Activity implements SensorEventListener {
         tv_date = (TextView) findViewById(R.id.tv_date);
         tv_date.setText(currentDateTimeString);
 
+
     }
 
     @Override
