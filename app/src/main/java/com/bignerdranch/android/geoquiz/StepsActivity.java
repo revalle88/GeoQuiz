@@ -6,15 +6,19 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import java.text.DateFormat;
 import java.util.Date;
 
-public class StepsActivity extends Activity implements SensorEventListener {
+public class StepsActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager SM;
     //private Sensor mySensor;
 
@@ -28,6 +32,7 @@ public class StepsActivity extends Activity implements SensorEventListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps_v2);
+
 
         tv_steps = (TextView) findViewById(R.id.tv_steps);
         tv_dist = (TextView) findViewById(R.id.tv_dist);
@@ -64,6 +69,29 @@ public class StepsActivity extends Activity implements SensorEventListener {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onSensorChanged(SensorEvent event) {
         if (running){
             tv_steps.setText(String.valueOf(event.values[0]));
@@ -80,12 +108,14 @@ public class StepsActivity extends Activity implements SensorEventListener {
 
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);//Menu Resource, Menu
-        return true;
-    }
+        return super.onCreateOptionsMenu(menu);
+    }*/
+
+/*
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -103,6 +133,6 @@ public class StepsActivity extends Activity implements SensorEventListener {
                 return super.onOptionsItemSelected(item);
         }
     }
-
+*/
 
 }
