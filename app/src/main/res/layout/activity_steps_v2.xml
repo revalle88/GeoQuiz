@@ -32,10 +32,9 @@
             android:paddingRight="10dp"
             android:paddingStart="20dp"
             android:paddingTop="14dp"
-            android:text="TextView"
+            android:text="@string/steps_label"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            tools:text="@string/steps_label" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_steps"
@@ -66,13 +65,12 @@
             android:paddingRight="10dp"
             android:paddingStart="20dp"
             android:paddingTop="14dp"
-            android:text="TextView"
+            android:text="distance:"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            tools:text="distance:" />
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/tv_cal"
+            android:id="@+id/tv_dist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="14dp"
@@ -99,10 +97,9 @@
             android:paddingRight="10dp"
             android:paddingStart="20dp"
             android:paddingTop="14dp"
-            android:text="TextView"
+            android:text="calories:"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            tools:text="calories:" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_cal"

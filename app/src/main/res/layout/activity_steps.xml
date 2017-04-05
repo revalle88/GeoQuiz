@@ -40,7 +40,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/tv_cal"
+        android:id="@+id/tv_dist"
         android:layout_width="80dp"
         android:layout_height="32dp"
         android:text="calories"
@@ -50,12 +50,12 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        android:id="@+id/tv_cal"
+        android:id="@+id/tv_dist"
         android:layout_width="80dp"
         android:layout_height="33dp"
         android:layout_marginLeft="27dp"
         android:text="distance"
-        app:layout_constraintLeft_toRightOf="@+id/tv_cal"
+        app:layout_constraintLeft_toRightOf="@+id/tv_dist"
         tools:layout_editor_absoluteY="140dp" />
 
     <TextView
@@ -64,7 +64,7 @@
         android:layout_height="36dp"
         android:layout_marginTop="65dp"
         android:text="timer"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dist"
         android:layout_marginLeft="46dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -76,5 +76,5 @@
         android:layout_marginTop="64dp"
         android:text="speed"
         app:layout_constraintLeft_toRightOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/tv_cal" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_dist" />
 </android.support.constraint.ConstraintLayout>

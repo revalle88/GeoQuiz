@@ -28,7 +28,7 @@ public class StepsActivity extends Activity implements SensorEventListener {
         setContentView(R.layout.activity_steps_v2);
 
         tv_steps = (TextView) findViewById(R.id.tv_steps);
-        tv_dist = (TextView) findViewById(R.id.tv_cal);
+        tv_dist = (TextView) findViewById(R.id.tv_dist);
         tv_cal = (TextView) findViewById(R.id.tv_cal);
         SM = (SensorManager)getSystemService(SENSOR_SERVICE);
      //   mySensor = SM.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -65,8 +65,8 @@ public class StepsActivity extends Activity implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         if (running){
             tv_steps.setText(String.valueOf(event.values[0]));
-            tv_dist.setText(String.valueOf(event.values[0]*0.45*1.8));
-            tv_cal.setText(String.valueOf(event.values[0]*0.045));
+            tv_dist.setText(String.valueOf(event.values[0]*0.45*1.8) + " m");
+            tv_cal.setText(String.valueOf(event.values[0]*0.045) + " kcal");
         }
     }
 
