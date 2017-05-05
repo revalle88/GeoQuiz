@@ -3,15 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.paranoid.android.menutest.MainActivity">
     <item
-        android:id="@+id/action_height"
+        android:id="@+id/action_personal"
         android:orderInCategory="100"
-        android:title="Рост"
+        android:title="Личные данные"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_weight"
+        android:id="@+id/action_share"
         android:orderInCategory="100"
-        android:title="Вес"
+        android:title="Поделиться"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Настройки"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_day"
+        android:orderInCategory="100"
+        android:title="День"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_week"

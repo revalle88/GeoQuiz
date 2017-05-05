@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference android:title="Имя"
+        android:key="username"
+        android:summary="Введите имя"></EditTextPreference>
+    <EditTextPreference android:title="Рост"
+        android:inputType="number"
+        android:key="tall"
+        android:summary="Введите свой рост в см."></EditTextPreference>
+    <EditTextPreference android:title="Вес"
+        android:inputType="number"
+        android:key="weight"
+        android:summary="Введите свой вес в кг."></EditTextPreference>
+    <EditTextPreference android:title="Размер обуви"
+        android:inputType="number"
+        android:key="step"
+        android:summary="Введите длину ступни в см."></EditTextPreference>
+    <CheckBoxPreference android:title="Application Updates"
+        android:defaultValue="false"
+        android:summary="This option if selected will allow the application to check for latest versions."
+        android:key="applicationUpdates" />
+    <ListPreference     android:title="Пол"
+        android:summary="Select the kind of data that you would like to download"
+        android:key="gender"
+        android:defaultValue="1"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+</PreferenceScreen>

@@ -1,6 +1,7 @@
 package com.bignerdranch.android.geoquiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -32,7 +33,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_steps_v2);
-
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         tv_steps = (TextView) findViewById(R.id.tv_steps);
         tv_dist = (TextView) findViewById(R.id.tv_dist);
@@ -84,7 +85,9 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_height) {
+        if (id == R.id.action_personal) {
+            Intent i = new Intent(this, MyPreferencesActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -108,31 +111,5 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
 
     }
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);//Menu Resource, Menu
-        return super.onCreateOptionsMenu(menu);
-    }*/
-
-/*
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.item1:
-                Toast.makeText(getApplicationContext(),"Item 1 Selected",Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.item2:
-                Toast.makeText(getApplicationContext(),"Item 2 Selected",Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.item3:
-                Toast.makeText(getApplicationContext(),"Item 3 Selected",Toast.LENGTH_LONG).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-*/
 
 }
