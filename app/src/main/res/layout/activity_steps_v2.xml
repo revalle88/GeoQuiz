@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/tv_date"
@@ -85,7 +86,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="106dp"
         android:orientation="horizontal">
 
         <TextView
@@ -113,5 +114,20 @@
             android:text="TextView"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />
+
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clickedStart"
+            android:text="Старт" />
+    </RelativeLayout>
+
 </LinearLayout>

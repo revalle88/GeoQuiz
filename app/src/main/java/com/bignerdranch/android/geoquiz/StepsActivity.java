@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     TextView tv_date;
     TextView tv_dist;
     TextView tv_cal;
+    Button btn_start;
     boolean running = false;
 
     @Override
@@ -38,6 +41,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
         tv_steps = (TextView) findViewById(R.id.tv_steps);
         tv_dist = (TextView) findViewById(R.id.tv_dist);
         tv_cal = (TextView) findViewById(R.id.tv_cal);
+        btn_start = (Button) findViewById(R.id.btn_start);
         SM = (SensorManager)getSystemService(SENSOR_SERVICE);
      //   mySensor = SM.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
      //   SM.registerListener(this, mySensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -109,6 +113,17 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
+    }
+
+    public void clickedStart(View v){
+        if (running == false) {
+            btn_start.setText("Стоп");
+            running = true;
+        }
+        else{
+            running = false;
+            btn_start.setText("Старт");
+        }
     }
 
 
