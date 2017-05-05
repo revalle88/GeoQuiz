@@ -31,6 +31,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     TextView tv_cal;
     Button btn_start;
     boolean running = false;
+    boolean isSensorRunning = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +57,7 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     @Override
     protected void onResume() {
         super.onResume();
-        running = true;
-        Sensor  countSensor = SM.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-        if (countSensor!=null){
-            SM.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-        }
-        else
-        {
-            Toast.makeText(this, "Sensor not found", Toast.LENGTH_LONG).show();
-        }
+
     }
 
     @Override
@@ -100,14 +93,14 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (running){
+       // if (running){
             tv_steps.setText(String.valueOf(event.values[0]));
 
             tv_dist.setText(String.format("%.1f", event.values[0]*0.45*1.8) + " m");
          //   tv_dist.setText(String.valueOf(event.values[0]*0.45*1.8) + " m");
             tv_cal.setText(String.format("%.1f", event.values[0]*0.045) + " kcal");
 
-        }
+     //   }
     }
 
     @Override
@@ -116,13 +109,25 @@ public class StepsActivity extends AppCompatActivity implements SensorEventListe
     }
 
     public void clickedStart(View v){
-        if (running == false) {
+        if (isSensorRunning == false) {
+
+
+            Sensor  countSensor = SM.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+            if (countSensor!=null){
+                SM.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+            }
+            else
+            {
+                Toast.makeText(this, "Sensor not found", Toast.LENGTH_LONG).show();
+            }
+
             btn_start.setText("Стоп");
-            running = true;
+            isSensorRunning = true;
         }
         else{
-            running = false;
+            isSensorRunning = false;
             btn_start.setText("Старт");
+            SM.unregisterListener(this);
         }
     }
 
